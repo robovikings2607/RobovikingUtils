@@ -1,0 +1,29 @@
+group 'org.archwood.frc2607'
+version '1.0'
+
+apply plugin: 'java'
+apply plugin: 'maven'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+    maven {
+        url "http://first.wpi.edu/FRC/roborio/maven/release"
+    }
+}
+
+dependencies {
+    compile 'edu.wpi.first.wpilibj:athena-jni:2017.3.1'
+    compile 'edu.wpi.first.wpilibj:athena:2017.3.1'
+    compile 'edu.wpi.first.wpilib:athena-runtime:2017.3.1'
+    compile 'edu.wpi.first.wpilib:hal:2017.3.1'
+}
+
+uploadArchives {
+    repositories {
+        mavenDeployer {
+            repository(url: "file://d:/frc-2017/gitRepos/maven/")
+        }
+    }
+}
